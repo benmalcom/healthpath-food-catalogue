@@ -29,6 +29,10 @@ const colors = {
 };
 
 const theme = extendTheme({
+  fonts: {
+    heading: `'Cera Pro', sans-serif`,
+    body: `'Cera Pro', sans-serif`,
+  },
   colors,
   components: {
     Button: {
