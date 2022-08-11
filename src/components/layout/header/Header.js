@@ -13,7 +13,7 @@ import { BsEnvelope } from 'react-icons/bs';
 import { FiUser } from 'react-icons/fi';
 import { HiChevronDown } from 'react-icons/hi';
 import { MdOutlineShoppingBag } from 'react-icons/md';
-import Logo from 'components/layout/HeaderLogo';
+import Logo from 'components/layout/header/HeaderLogo';
 
 export const Header = () => {
   return (
