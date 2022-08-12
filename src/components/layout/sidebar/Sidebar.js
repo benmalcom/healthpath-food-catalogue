@@ -1,6 +1,6 @@
 import { Flex, Link as ChakraLink, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 import links from 'components/layout/sidebar/links';
 
 export const Sidebar = ({}) => {
@@ -12,11 +12,12 @@ export const Sidebar = ({}) => {
             as={RouterLink}
             to={link.path}
             textDecoration="none"
-            _hover={{ color: 'brand.primary' }}
-            _active={{ color: 'brand.primary' }}
+            _hover={{ color: 'primary.500' }}
+            _active={{ color: 'primary.500' }}
             color="#50555B"
             fontSize="16px"
             fontWeight={700}
+            _activeLink={{ color: 'primary.500' }}
           >
             <Flex key={index} align="center" color="inherit" font="inherit">
               {link.icon}{' '}

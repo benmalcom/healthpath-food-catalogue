@@ -1,6 +1,6 @@
 import { ChakraProvider, Flex } from '@chakra-ui/react';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Header, Sidebar } from 'components/layout';
 import Foods from 'pages/Foods';
 import theme from 'styles/theme';
@@ -14,9 +14,10 @@ function App() {
           <Header />
           <Flex w="full" flex={1}>
             <Sidebar />
-            <Flex>
+            <Flex flex={1} pr="274px">
               <Routes>
                 <Route path="/foods" element={<Foods />} />
+                <Route path="*" element={<Navigate to="/foods" replace />} />
               </Routes>
             </Flex>
           </Flex>

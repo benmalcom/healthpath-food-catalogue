@@ -54,7 +54,7 @@ export const Header = () => {
           <Flex
             h="26px"
             w="26px"
-            bg="brand.primary"
+            bg="primary.500"
             borderRadius="4px"
             align="center"
             justify="center"
@@ -97,9 +97,9 @@ export const Header = () => {
               <Icon as={FiUser} color="white" w="23.74px" h="26px" />
             </MenuButton>
             <MenuList>
-              <MenuItem>Download</MenuItem>
-              <MenuItem>Create a Copy</MenuItem>
-              <MenuItem>Mark as Draft</MenuItem>
+              <MenuItem>Profile</MenuItem>
+              <MenuItem>Settings</MenuItem>
+              <MenuItem>Logout</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
