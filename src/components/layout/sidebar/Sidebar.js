@@ -9,6 +9,7 @@ export const Sidebar = ({}) => {
       <VStack spacing="34px" align="stretch" w="300px" p="20px">
         {links.map((link, index) => (
           <ChakraLink
+            key={index}
             as={RouterLink}
             to={link.path}
             textDecoration="none"
@@ -19,7 +20,7 @@ export const Sidebar = ({}) => {
             fontWeight={700}
             _activeLink={{ color: 'primary.500' }}
           >
-            <Flex key={index} align="center" color="inherit" font="inherit">
+            <Flex align="center" color="inherit" font="inherit">
               {link.icon}{' '}
               <Text font="inherit" textTransform="uppercase" ml="10px">
                 {link.label}

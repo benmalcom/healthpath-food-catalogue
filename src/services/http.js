@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { isEmpty } from 'lodash';
+import { FOODS_BASE_URL } from 'utils/constants';
 // Default config options
 const defaultOptions = {
-  baseURL: `${process.env.NEXT_PUBLIC_API_BASE_URL}/${process.env.NEXT_PUBLIC_API_VERSION}`,
+  baseURL: FOODS_BASE_URL,
   'Content-Type': 'application/json',
   timedOut: 3000,
 };
@@ -11,12 +12,12 @@ const defaultOptions = {
 const instance = axios.create(defaultOptions);
 
 instance.interceptors.request.use(
-   config => config,
+  config => config,
   error => Promise.reject(error)
 );
 // Add a response interceptor
 instance.interceptors.response.use(
-  response => response.data,
+  response => response,
   error => {
     if (error.response) {
       if (error.code === 'ECONNABORTED')

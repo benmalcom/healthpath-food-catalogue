@@ -1,3 +1,3 @@
 export const PAGE_MAX_WIDTH = '1920px';
-const appBaseUrl =
-  process.env.VERCEL_URL || process.env.NEXT_PUBLIC_APP_BASE_URL;
+export const FOODS_BASE_URL =
+  'https://62da64419eedb699636cf77d.mockapi.io/api/v1/';
