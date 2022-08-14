@@ -7,7 +7,7 @@ export const LogoFull = boxProps => (
 );
 
 export const MobileLogo = boxProps => (
-  <Box {...boxProps}>
+  <Box {...boxProps} w="29.86px" h="25.09px">
     <Image src="images/logo.png" />
   </Box>
 );

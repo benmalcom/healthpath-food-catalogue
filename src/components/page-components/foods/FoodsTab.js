@@ -22,13 +22,20 @@ const tabProps = {
   _active: {
     colorScheme: 'primary',
   },
+  paddingInline: { base: '0.22rem', sm: '0.5rem', md: '1rem' },
+};
+
+const textProps = {
+  fontSize: { base: '11.2px', sm: '11.5px', md: '16px' },
+  fontWeight: 700,
+  color: 'inherit',
 };
 export const FoodsTab = () => {
   return (
     <Tabs colorScheme="primary" w="full">
       <TabList>
         <Tab {...tabProps}>
-          <Text fontSize="16px" fontWeight={700} color="inherit">
+          <Text {...textProps}>
             <Icon
               as={AiOutlineAppstore}
               color="inherit"
@@ -39,7 +46,7 @@ export const FoodsTab = () => {
           </Text>
         </Tab>
         <Tab {...tabProps}>
-          <Text fontSize="16px" fontWeight={700} color="inherit">
+          <Text {...textProps}>
             <Icon
               as={AiOutlineUser}
               color="inherit"
@@ -50,7 +57,7 @@ export const FoodsTab = () => {
           </Text>
         </Tab>
         <Tab {...tabProps}>
-          <Text fontSize="16px" fontWeight={700} color="inherit">
+          <Text {...textProps}>
             <Icon
               as={AiOutlinePlusCircle}
               color="inherit"

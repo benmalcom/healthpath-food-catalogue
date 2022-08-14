@@ -16,8 +16,26 @@ export const CatalogueFilter = ({ onFilter, value }) => {
     onFilter?.(filter);
   }, [filter, onFilter]);
   return (
-    <Flex my="25px" align="center" justify="space-between">
-      <Flex columnGap={5}>
+    <Flex
+      my="25px"
+      align={{
+        base: 'center',
+        md: 'flex-start',
+      }}
+      flexDirection={{
+        base: 'column',
+        lg: 'unset',
+      }}
+      justify={{ md: 'space-between' }}
+      w="full"
+    >
+      <Flex
+        columnGap={5}
+        w={{
+          base: 'full',
+          lg: 'unset',
+        }}
+      >
         <DropDown
           onSelect={undefined}
           title="Category"
@@ -36,8 +54,17 @@ export const CatalogueFilter = ({ onFilter, value }) => {
           ]}
         />
       </Flex>
-      <Flex>
-        <InputGroup>
+      <Flex
+        mt={{
+          base: '25px',
+          lg: 'unset',
+        }}
+        w={{
+          base: 'full',
+          md: 'unset',
+        }}
+      >
+        <InputGroup w="full">
           <InputLeftElement
             pointerEvents="none"
             children={

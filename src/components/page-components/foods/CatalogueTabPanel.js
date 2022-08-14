@@ -21,8 +21,6 @@ export const CatalogueTabPanel = () => {
     return () => {};
   }, []);
 
-  console.log('currentFilter ', currentFilter);
-
   const filteredCatalogue = useMemo(() => {
     return catalogue.filter(({ name }) =>
       name.toUpperCase().includes(currentFilter?.text?.trim().toUpperCase())

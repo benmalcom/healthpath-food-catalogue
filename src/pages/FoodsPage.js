@@ -5,10 +5,27 @@ import FoodsTab from 'components/page-components/foods/FoodsTab';
 export const FoodsPage = () => {
   return (
     <Flex w="full" h="full" direction="column">
-      <Flex w="full" justify="space-between" mb="25px" align="center">
+      <Flex
+        w="full"
+        direction={{
+          base: 'column',
+          lg: 'row',
+        }}
+        justify={{
+          lg: 'space-between',
+        }}
+        mb={{
+          base: 'unset',
+          lg: '25px',
+        }}
+        align={{
+          base: 'flex-start',
+          lg: 'center',
+        }}
+      >
         <Flex direction="column">
           <Text
-            fontSize="40px"
+            fontSize={{ base: '30px', lg: '40px' }}
             fontWeight={500}
             color="gray.800"
             lineHeight="48px"
@@ -16,7 +33,7 @@ export const FoodsPage = () => {
             Foods
           </Text>
           <Text
-            fontSize="18px"
+            fontSize={{ base: '16px', lg: '18px' }}
             fontWeight={400}
             color="gray.700"
             lineHeight="28px"
@@ -34,6 +51,7 @@ export const FoodsPage = () => {
           fontSize="16px"
           textUnderlineOffset={0}
           _hover={{ textDecoration: 'none' }}
+          my={{ base: '20px', sm: '20px', lg: 'unset' }}
         >
           Create meal plan
         </Button>

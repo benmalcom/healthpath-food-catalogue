@@ -5,7 +5,11 @@ import CatalogueItem from 'components/page-components/foods/CatalogueItem';
 export const Catalogue = ({ catalogue }) => {
   return (
     <Grid
-      templateColumns="repeat(3, 336px)"
+      templateColumns={{
+        base: 'repeat(1, 100%)',
+        md: 'repeat(2, 45%)',
+        xl: 'repeat(3, 336px)',
+      }}
       flex={1}
       gap="32px"
       overflow="auto"
