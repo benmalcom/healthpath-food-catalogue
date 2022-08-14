@@ -1,6 +1,6 @@
 import { Grid } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import CatalogueItem from 'components/page-components/foods/CatalogueItem';
+import CatalogueCard from 'components/page-components/foods/CatalogueCard';
 
 export const Catalogue = ({ catalogue }) => {
   return (
@@ -16,7 +16,7 @@ export const Catalogue = ({ catalogue }) => {
       minH={0}
     >
       {catalogue?.map(item => (
-        <CatalogueItem catalogueItem={item} key={item.id} />
+        <CatalogueCard catalogueItem={item} key={item.id} />
       ))}
     </Grid>
   );

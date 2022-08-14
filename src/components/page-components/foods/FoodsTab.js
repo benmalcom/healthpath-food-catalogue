@@ -22,7 +22,8 @@ const tabProps = {
   _active: {
     colorScheme: 'primary',
   },
-  paddingInline: { base: '0.22rem', sm: '0.5rem', md: '1rem' },
+  paddingInline: 0,
+  marginRight: { base: '7px', md: '20px' },
 };
 
 const textProps = {

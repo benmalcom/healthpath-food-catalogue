@@ -1,8 +1,9 @@
 import { Button, GridItem, Text, VStack } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-export const CatalogueItem = ({ catalogueItem }) => (
+export const CatalogueCard = ({ catalogueItem }) => (
   <GridItem
+    maxW={{ base: '317px', md: '336px' }}
     h="317px"
     bg="white"
     padding="32px 24px 24px"
@@ -54,7 +55,7 @@ export const CatalogueItem = ({ catalogueItem }) => (
   </GridItem>
 );
 
-CatalogueItem.propTypes = {
+CatalogueCard.propTypes = {
   catalogueItem: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -62,4 +63,4 @@ CatalogueItem.propTypes = {
     tags: PropTypes.string.isRequired,
   }).isRequired,
 };
-export default CatalogueItem;
+export default CatalogueCard;

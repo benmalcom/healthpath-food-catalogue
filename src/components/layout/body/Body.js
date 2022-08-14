@@ -29,7 +29,7 @@ export const Body = ({ isSidebarOpen, openSidebar, closeSidebar }) => {
       pos="relative"
     >
       {isSidebarOpen && <Sidebar isMobile={isMobile} />}
-      <Flex flex={1} h="full" overflowY="auto">
+      <Flex flex={1} h="full" overflowY="auto" zIndex={isMobile ? 1 : 'unset'}>
         <Flex
           w="1072px"
           mx={{ base: '15px', sm: '15px', md: '32.5px' }}

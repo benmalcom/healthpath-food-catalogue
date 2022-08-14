@@ -29,7 +29,8 @@ export const Sidebar = ({ isMobile }) => {
         }}
         align="stretch"
         w={{
-          base: '300px',
+          base: '260px',
+          sm: '300px',
         }}
         p="20px"
       >
