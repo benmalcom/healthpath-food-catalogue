@@ -12,7 +12,7 @@ import {
   AiOutlinePlusCircle,
   AiOutlineUser,
 } from 'react-icons/ai';
-import CatalogueTabPanel from 'components/page-components/foods/CatalogueTabPanel';
+import FoodsTabPanel from 'components/page-components/foods/FoodsTabPanel';
 
 const tabProps = {
   color: 'gray.700',
@@ -71,8 +71,8 @@ export const FoodsTab = () => {
       </TabList>
 
       <TabPanels>
-        <TabPanel px={0}>
-          <CatalogueTabPanel />
+        <TabPanel px={0} py={{ base: 0, md: 'auto' }}>
+          <FoodsTabPanel />
         </TabPanel>
         <TabPanel>
           <p> My Meal Plan!</p>

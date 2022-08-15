@@ -1,31 +1,31 @@
 import { Flex, Spinner } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
-import Catalogue from 'components/page-components/foods/Catalogue';
-import CatalogueFilter from 'components/page-components/foods/CatalogueFilter';
-import { getCatalogue } from 'services/food';
+import FoodList from 'components/page-components/foods/FoodList';
+import FoodsFilter from 'components/page-components/foods/FoodsFilter';
+import { getFoods } from 'services/food';
 
-export const CatalogueTabPanel = () => {
+export const FoodsTabPanel = () => {
   const [currentFilter, setCurrentFilter] = useState(null);
-  const [catalogue, setCatalogue] = useState([]);
+  const [foods, setFoods] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    getCatalogue()
+    getFoods()
       .then(response => {
-        setCatalogue(response.data);
+        setFoods(response.data);
       })
-      .catch(err => setCatalogue([]))
+      .catch(err => setFoods([]))
       .finally(() => setIsLoading(false));
 
     return () => {};
   }, []);
 
-  const filteredCatalogue = useMemo(() => {
-    return catalogue.filter(({ name }) =>
+  const filteredFoods = useMemo(() => {
+    return foods.filter(({ name }) =>
       name.toUpperCase().includes(currentFilter?.text?.trim().toUpperCase())
     );
-  }, [catalogue, currentFilter?.text]);
+  }, [foods, currentFilter?.text]);
 
   if (isLoading)
     return (
@@ -41,13 +41,13 @@ export const CatalogueTabPanel = () => {
     );
   return (
     <>
-      <CatalogueFilter
+      <FoodsFilter
         value={{ text: '' }}
         onFilter={filter => setCurrentFilter(filter)}
       />
-      <Catalogue catalogue={filteredCatalogue} />
+      <FoodList foods={filteredFoods} />
     </>
   );
 };
 
-export default CatalogueTabPanel;
+export default FoodsTabPanel;

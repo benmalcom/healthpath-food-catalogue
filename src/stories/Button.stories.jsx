@@ -24,7 +24,4 @@ export const OutlineWhite = Template.bind({});
 OutlineWhite.args = {
   variant: 'outline-white',
   label: 'Outline White',
-  backgrounds: {
-    default: 'gray',
-  },
 };

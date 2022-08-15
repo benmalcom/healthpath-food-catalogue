@@ -1,17 +1,16 @@
 import React from 'react';
-import CatalogueCard from 'components/page-components/foods/CatalogueCard';
+import FoodCard from 'components/page-components/foods/FoodCard';
 
 export default {
-  title: 'Catalogue/Card',
-  component: CatalogueCard,
+  title: 'FoodCard',
+  component: FoodCard,
 };
 
-const Template = args => <CatalogueCard {...args} />;
+const Template = args => <FoodCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  w: '336px',
-  catalogueItem: {
+  food: {
     name: 'Elegant Steel Sausages',
     tags: 'normal, vegan, pescatarian',
     description:

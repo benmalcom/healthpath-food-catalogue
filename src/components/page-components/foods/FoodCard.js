@@ -1,9 +1,10 @@
 import { Button, GridItem, Text, VStack } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-export const CatalogueCard = ({ catalogueItem }) => (
+export const FoodCard = ({ food }) => (
   <GridItem
     maxW={{ base: '317px', md: '336px' }}
+    m={{ base: '0 auto', md: 'unset' }}
     h="317px"
     bg="white"
     padding="32px 24px 24px"
@@ -25,7 +26,7 @@ export const CatalogueCard = ({ catalogueItem }) => (
           noOfLines={2}
           textTransform="uppercase"
         >
-          {catalogueItem.tags}
+          {food.tags}
         </Text>
         <Text
           w="full"
@@ -37,7 +38,7 @@ export const CatalogueCard = ({ catalogueItem }) => (
           textAlign="center"
           noOfLines={2}
         >
-          {catalogueItem.name}
+          {food.name}
         </Text>
 
         <Text
@@ -47,7 +48,7 @@ export const CatalogueCard = ({ catalogueItem }) => (
           color="gray.700"
           textAlign="center"
         >
-          {catalogueItem.description}
+          {food.description}
         </Text>
       </VStack>
       <Button variant="outline">Recommend</Button>
@@ -55,12 +56,12 @@ export const CatalogueCard = ({ catalogueItem }) => (
   </GridItem>
 );
 
-CatalogueCard.propTypes = {
-  catalogueItem: PropTypes.shape({
+FoodCard.propTypes = {
+  food: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     tags: PropTypes.string.isRequired,
   }).isRequired,
 };
-export default CatalogueCard;
+export default FoodCard;

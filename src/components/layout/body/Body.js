@@ -28,7 +28,9 @@ export const Body = ({ isSidebarOpen, openSidebar, closeSidebar }) => {
       m="0 auto"
       pos="relative"
     >
-      {isSidebarOpen && <Sidebar isMobile={isMobile} />}
+      {isSidebarOpen && (
+        <Sidebar isMobile={isMobile} closeSidebar={closeSidebar} />
+      )}
       <Flex flex={1} h="full" overflowY="auto" zIndex={isMobile ? 1 : 'unset'}>
         <Flex
           w="1072px"

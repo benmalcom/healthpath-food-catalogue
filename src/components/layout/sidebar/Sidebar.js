@@ -4,7 +4,7 @@ import React from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import links from 'components/layout/sidebar/links';
 
-export const Sidebar = ({ isMobile }) => {
+export const Sidebar = ({ isMobile, closeSidebar }) => {
   return (
     <Flex
       zIndex={isMobile ? 2 : 'unset'}
@@ -46,6 +46,7 @@ export const Sidebar = ({ isMobile }) => {
             fontSize="16px"
             fontWeight={700}
             _activeLink={{ color: 'primary.500' }}
+            onClick={isMobile ? () => closeSidebar() : undefined}
           >
             <Flex align="center" color="inherit" font="inherit">
               {link.icon}{' '}
@@ -62,5 +63,6 @@ export const Sidebar = ({ isMobile }) => {
 
 Sidebar.propTypes = {
   isMobile: PropTypes.bool,
+  closeSidebar: PropTypes.func.isRequired,
 };
 export default Sidebar;

@@ -1,13 +1,13 @@
 import { Grid } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import CatalogueCard from 'components/page-components/foods/CatalogueCard';
+import FoodCard from 'components/page-components/foods/FoodCard';
 
-export const Catalogue = ({ catalogue }) => {
+export const FoodList = ({ foods }) => {
   return (
     <Grid
       templateColumns={{
         base: 'repeat(1, 100%)',
-        md: 'repeat(2, 45%)',
+        md: 'repeat(2, 336px)',
         xl: 'repeat(3, 336px)',
       }}
       flex={1}
@@ -15,15 +15,15 @@ export const Catalogue = ({ catalogue }) => {
       overflow="auto"
       minH={0}
     >
-      {catalogue?.map(item => (
-        <CatalogueCard catalogueItem={item} key={item.id} />
+      {foods?.map(food => (
+        <FoodCard food={food} key={food.id} />
       ))}
     </Grid>
   );
 };
 
-Catalogue.propTypes = {
-  catalogue: PropTypes.arrayOf(
+FoodList.propTypes = {
+  foods: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
@@ -32,4 +32,4 @@ Catalogue.propTypes = {
     }).isRequired
   ),
 };
-export default Catalogue;
+export default FoodList;

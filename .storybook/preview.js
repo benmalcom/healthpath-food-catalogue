@@ -12,7 +12,7 @@ export const parameters = {
     theme,
   },
   backgrounds: {
-    default: 'white',
+    default: 'gray',
     values: [
       { name: 'white', value: '#FFFFFF' },
       { name: 'gray', value: '#F5F5F5' },
